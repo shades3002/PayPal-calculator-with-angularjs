@@ -1,0 +1,40 @@
+{
+  "name": "PayPal-calculator-with-angularjs",
+  "version": "1.0.0",
+  "private": false,
+  "description": "PayPal calculator with angularjs, to calculate the fees charged by the platform when sending and receiving.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm install && grunt server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:shades3002/PayPal-calculator-with-angularjs.git"
+  },
+  "author": "shades3002@gmail.com",
+  "license": "LGPL V3",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-pug": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+  },
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-loading-bar": "^0.9.0",
+    "angular-sanitize": "1.5.8",
+    "angular-touch": "1.5.7",
+    "angular-translate": "^2.12.0",
+    "angular-translate-loader-static-files": "^2.12.1",
+    "bootstrap": "^3.3.6",
+    "angular-ui-bootstrap": "^2.3.1",
+    "jquery": "^2.2.3",
+    "toastr": "^2.1.2",
+    "grunt-sass": "^1.2.0",
+  }
+}
