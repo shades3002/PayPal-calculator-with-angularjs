@@ -5,8 +5,6 @@ PayPal calculator with angularjs, to calculate the fees charged by the platform 
 
 When making Paypal balance exchanges it becomes necessary to calculate the commissions, to know the net amount that we will receive. For this we developed a simple calculator in AngularJs.
 
-An [example](http://url.com/ "Title")
-
 # Features
 * Sass
 * Pup
@@ -17,7 +15,7 @@ An [example](http://url.com/ "Title")
 
 # Motivation
 
-For this project I wanted to use Pug which is a template engine of NodeJs to facilitate writing HTML, turn the style handle with sass. Everything was automated with the GruntJs task manager
+For this project I wanted to use [Pug](https://pugjs.org/ "Pug") which is a template engine of NodeJs to facilitate writing HTML, turn the style handle with [SASS](http://sass-lang.com/ "SASS"). Everything was automated with the [GruntJs](https://gruntjs.com/ "GruntJs") task manager.
 
 # Installation
 
