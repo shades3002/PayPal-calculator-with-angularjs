@@ -5,18 +5,8 @@ html(lang='en', xml:lang='en')
         meta(name='viewport', content='width=device-width, initial-scale=1')
         meta(name='msapplication-TileColor', content='#5bc0de')
         title Paypal Calculator
-        link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
-        link(rel='stylesheet', type='text/css', href='node_modules/bootstrap/dist/css/bootstrap.css')
-        link(rel='stylesheet', type='text/css', href='node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css')
-        link(rel='stylesheet', type='text/css', href='node_modules/toastr/build/toastr.min.css')
-        link(rel='stylesheet', type='text/css', href='node_modules/angular-loading-bar/build/loading-bar.min.css')
+        include ./includes/styles.pug
     body(ng-app='app')
         div(ng-view='', ng-cloak='')
-        script(type='text/javascript', src='node_modules/angular/angular.js')
-        script(type='text/javascript', src='node_modules/angular-route/angular-route.min.js')
-        script(type='text/javascript', src='app/app.js')
-        script(type='text/javascript', src='app/modules/core/core.module.js')
-        script(type='text/javascript', src='app/modules/core/core.routes.js')
-        script(type='text/javascript', src='app/modules/calculator/calculator.module.js')
-        script(type='text/javascript', src='app/modules/calculator/calculator.routes.js')
-        script(type='text/javascript', src='app/modules/calculator/calculator.controllers.js')
+        include ./includes/vendors.pug
+        include ./includes/modules.pug
