@@ -13,7 +13,7 @@ PayPal calculator with angularjs, to calculate the fees charged by the platform 
 
 # Motivation
 
-Allow evaluate and understand the operation of the jqgrid library, supplying data in json format from a small script in php
+When making Paypal balance exchanges it becomes necessary to calculate the commissions, to know the net amount that we will receive. For this we developed a simple calculator in AngularJs.
 
 # Installation
 
