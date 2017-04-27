@@ -20,7 +20,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1"
   },
   "dependencies": {
     "angular": "^1.5.7",
@@ -35,6 +35,6 @@
     "angular-ui-bootstrap": "^2.3.1",
     "jquery": "^2.2.3",
     "toastr": "^2.1.2",
-    "grunt-sass": "^1.2.0",
+    "grunt-sass": "^1.2.0"
   }
 }
