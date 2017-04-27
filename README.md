@@ -17,6 +17,8 @@ Allow evaluate and understand the operation of the jqgrid library, supplying dat
 
 # Installation
 
+Note: you must have NodeJs installed in your environment, in order to run the application
+
 1. Download the source code from git repository, executing the following command:
 
 ```bash
@@ -25,8 +27,7 @@ $ git clone git@github.com:shades3002/PayPal-calculator-with-angularjs.git
 $ cd PayPal-calculator-with-angularjs
 $ git checkout master
 $ sudo npm install -g grunt-cli
-$ npm install
-$ grunt server
+$ npm start
 ```
 
 # Contributors
