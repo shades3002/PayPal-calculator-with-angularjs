@@ -1,5 +1,5 @@
 # PayPal-calculator-with-angularjs
-PayPal calculator with angularjs, to calculate the fees charged by the platform when sending and receiving.
+PayPal calculator with AngularJs, to calculate the fees charged by the platform when sending and receiving.
 
 # Synopsis
 

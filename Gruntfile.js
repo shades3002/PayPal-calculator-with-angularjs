@@ -57,6 +57,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-newer');
 
     // Start the http server for development
     grunt.registerTask('server', [
