@@ -1,4 +1,47 @@
 .container-fluid
     .row
-        .col-xs-12
-            h1 Holas
+        .col-xs-3
+        .col-xs-6
+            .panel.panel-primary
+                .panel-body
+                    .page-header
+                        h3 PayPal Commissions Calculator
+                    .row
+                        .col-xs-5
+                            label Price per transaction
+                            .input-group
+                                span#basic-addon1.input-group-addon %
+                                input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                                span#basic-addon1.input-group-addon + $
+                                input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+            .panel.panel-primary
+                .panel-body
+                    .form-group.col-xs-7
+                        label To receive
+                        .input-group
+                            span#basic-addon1.input-group-addon Receive
+                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                    .form-group.col-xs-7
+                        .input-group
+                            span#basic-addon1.input-group-addon Send
+                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                    .form-group.col-xs-7
+                        .input-group
+                            span#basic-addon1.input-group-addon Comision
+                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                .panel-footer
+                .panel-body
+                    .form-group.col-xs-7
+                        label To send
+                        .input-group
+                            span#basic-addon1.input-group-addon Send
+                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                    .form-group.col-xs-7
+                        .input-group
+                            span#basic-addon1.input-group-addon Receive
+                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                    .form-group.col-xs-7
+                        .input-group
+                            span#basic-addon1.input-group-addon Comision
+                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+        .col-xs-3
