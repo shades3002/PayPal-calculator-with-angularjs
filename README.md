@@ -1,4 +1,4 @@
-# PayPal-calculator-with-angularjs
+# PayPal-calculator-with-angularjs | [Demo](https://shades3002.github.io/PayPal-calculator-with-angularjs "Demo")
 PayPal calculator with AngularJs, to calculate the fees charged by the platform when sending and receiving.
 
 # Synopsis
@@ -16,9 +16,6 @@ When making Paypal balance exchanges it becomes necessary to calculate the commi
 # Motivation
 
 For this project I wanted to use [Pug](https://pugjs.org/ "Pug") which is a template engine of NodeJs to facilitate writing HTML, turn the style handle with [SASS](http://sass-lang.com/ "SASS"). Everything was automated with the [GruntJs](https://gruntjs.com/ "GruntJs") task manager.
-
-
-# [Demo](https://shades3002.github.io/PayPal-calculator-with-angularjs "Demo")
 
 # Installation
 
