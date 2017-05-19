@@ -32,7 +32,8 @@ $ sudo npm install -g grunt-cli
 $ npm start
 ```
 
-#Production
+# Production
+
 Note: To put into production you must run the next task
 
 ```bash
