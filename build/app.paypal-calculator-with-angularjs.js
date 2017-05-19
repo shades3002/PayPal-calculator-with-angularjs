@@ -8,6 +8,16 @@
             'app.calculator'
         ]);
 })();
+(function(){
+    'use strict';
+    angular
+        .module('app.calculator', [
+            'app.calculator.controllers'
+        ]);
+
+    angular
+        .module('app.calculator.controllers', []);
+})();
 (function () {
     'use strict';
 
@@ -33,16 +43,6 @@
             .determinePreferredLanguage();
         }])
         .run();
-})();
-(function(){
-    'use strict';
-    angular
-        .module('app.calculator', [
-            'app.calculator.controllers'
-        ]);
-
-    angular
-        .module('app.calculator.controllers', []);
 })();
 (function() {
     'use strict';

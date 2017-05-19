@@ -8,5 +8,5 @@ html(lang='en', xml:lang='en')
         include ./includes/styles.pug
     body(ng-app='app')
         div(ng-view='', ng-cloak='')
-        include ./includes/vendors.pug
+        script(type='text/javascript', src='build/node_modules.js')
         script(type='text/javascript', src='build/app.paypal-calculator-with-angularjs.min.js')

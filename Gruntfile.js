@@ -45,14 +45,35 @@ module.exports = function(grunt) {
                     //app
                     'app/app.js',
                     //root module
-                    'app/modules/core/core.module.js',
-                    'app/modules/calculator/calculator.module.js',
+                    'app/**/**/*module*.js',
                     //js
                     'app/**/**/*.js',
                     '!app/modules/core/i18n/*.js',
                 ],
                 dest: 'build/app.paypal-calculator-with-angularjs.js',
-            }
+            },
+            css: {
+                src: [
+                    'node_modules/bootstrap/dist/css/bootstrap.css',
+                    'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css',
+                    'node_modules/toastr/build/toastr.min.css',
+                    'node_modules/angular-loading-bar/build/loading-bar.min.css'
+                ],
+                dest: 'build/style/style.css',
+            },
+            node: {
+                src: [
+                    'node_modules/jquery/dist/jquery.min.js',
+                    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+                    'node_modules/angular/angular.js',
+                    'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+                    'node_modules/angular-route/angular-route.min.js',
+                    'node_modules/angular-translate/dist/angular-translate.min.js',
+                    'node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+                    'node_modules/angular-sanitize/angular-sanitize.min.js'
+                ],
+                dest: 'build/node_modules.js'
+            }
         },
         uglify: {
             options: {
