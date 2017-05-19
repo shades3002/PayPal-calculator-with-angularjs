@@ -3,7 +3,7 @@
 
     angular
         .module('app.core', [
-            // Vendors
+            /* Vendors */
             'ngRoute',
             'ui.bootstrap',
             'pascalprecht.translate',

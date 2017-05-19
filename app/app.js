@@ -3,7 +3,7 @@
 
     angular
         .module('app', [
-            // Modules
+            /* Modules */
             'app.core',
             'app.calculator'
         ]);

@@ -14,21 +14,22 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: './src/views',
-                    src: ['**/*.pug', '!includes/**', '!index.pug'],
+                    src: ['**/*.pug', '!includes/**', '!index.pug', '!index-dev.pug',],
                     dest: 'app/modules/',
                     ext: '.html',
                 }, {
-                    'index.html': 'src/views/index.pug'
+                    'index.html': 'src/views/index.pug',
+                    'index-dev.html': 'src/views/index-dev.pug'
                 }]
             }
         },
         watch: {
             options: {
                 livereload: true,
-            },
-            tasks: ['jshint'],            
+            },           
             js: {
                 files: ['Gruntfile.js', 'app/*.js', 'app/modules/**/*.js'],
+                tasks: ['newer:jshint'], 
             },
             pug: {
                 files: ['src/views/**/*.pug'],
@@ -38,11 +39,42 @@ module.exports = function(grunt) {
                 files: ['index.html', 'app/**/*.html', 'app/**/**/*.html'],
             },
         },
+        concat: {
+            dist: {
+                src: [
+                    //app
+                    'app/app.js',
+                    //root module
+                    'app/**/core/*.js',
+                    'app/**/**/*.js',
+                    '!app/modules/core/i18n/*.js',
+                ],
+                dest: 'build/app.paypal-calculator-with-angularjs.js',
+            }
+        },
+        uglify: {
+            options: {
+                compress: true,
+                mangle: false,
+                beautify: false,
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= pkg.author %> -' +
+                '<%= grunt.template.today("yyyy-mm-dd") %> */'
+            },
+            build: {
+                src: 'build/app.paypal-calculator-with-angularjs.js',
+                dest: 'build/app.paypal-calculator-with-angularjs.min.js'
+            }
+        }, 
         connect: {
             server: {
                 options: {
                     port: 9000,
-                    base: '.',
+                    base: {
+                        path: '.',
+                        options: {
+                            index: 'index-dev.html',
+                        }
+                    },
                     hostname: 'localhost',
                     protocol: 'http',
                     livereload: true,
@@ -58,6 +90,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-newer');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify'); 
+
+    //Producction
+    grunt.registerTask('prodution', [
+        'concat',
+        'uglify'
+    ]);
 
     // Start the http server for development
     grunt.registerTask('server', [

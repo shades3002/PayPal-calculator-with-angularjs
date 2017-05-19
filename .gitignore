@@ -19,11 +19,3 @@ node_modules
 .sass-cache
 assets/css/style.css.map
 assets/css/style.css
-
-# Compiled HTML
-index.html
-*.html
-**/+.html
-app/*.html
-app/**/*.html
-app/**/**/*.html
