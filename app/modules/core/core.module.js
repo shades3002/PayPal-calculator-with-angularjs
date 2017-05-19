@@ -4,7 +4,23 @@
     angular
         .module('app.core', [
             // Vendors
-            'ngRoute'
+            'ngRoute',
+            'ui.bootstrap',
+            'pascalprecht.translate',
+            'ngSanitize'
         ])
+        .config(['$translateProvider',function($translateProvider) {
+            $translateProvider
+            .useStaticFilesLoader({
+                prefix: 'app/modules/core/i18n/',
+                suffix: '.js'
+            })
+            .registerAvailableLanguageKeys(['en-us','es-es'], {
+             'en*': 'en-us',
+             'es*': 'es-es'
+            })
+            .useSanitizeValueStrategy('sanitize')
+            .determinePreferredLanguage();
+        }])
         .run();
 })();

@@ -28,18 +28,18 @@
         function getCalculator() {
 
             if(vm.calc.percentage > 0) {
-                var percentage = 1 - (vm.calc.percentage / 100);
+                vm.percentage = 1 - (vm.calc.percentage / 100);
             }
 
             if ( vm.calc.SToReceive !== undefined && vm.calc.SToReceive !== '' && vm.calc.SToReceive !== null) {
-                vm.calc.SToSend = Math.round(((vm.calc.SToReceive + vm.calc.commission) / percentage) * 100) / 100;
+                vm.calc.SToSend = Math.round(((vm.calc.SToReceive + vm.calc.commission) / vm.percentage) * 100) / 100;
                 vm.calc.SToComision = Math.round((vm.calc.SToSend - vm.calc.SToReceive) * 100) / 100;  
             } else {
                 vm.calc.SToSend = vm.calc.SToComision = ''; 
             }
 
             if ( vm.calc.RToReceive !== undefined && vm.calc.RToReceive !== '' && vm.calc.RToReceive !== null) {
-                vm.calc.RToSend = Math.round((vm.calc.RToReceive * percentage - vm.calc.commission) * 100) / 100; 
+                vm.calc.RToSend = Math.round((vm.calc.RToReceive * vm.percentage - vm.calc.commission) * 100) / 100; 
                 vm.calc.RToComision = Math.round((vm.calc.RToReceive - vm.calc.RToSend) * 100) / 100;               
             } else {
                 vm.calc.RToSend = vm.calc.RToComision = ''; 
