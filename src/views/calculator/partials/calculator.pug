@@ -6,42 +6,44 @@
                 .panel-body
                     .page-header
                         h3 PayPal Commissions Calculator
-                    .row
-                        .col-xs-5
-                            label Price per transaction
-                            .input-group
-                                span#basic-addon1.input-group-addon %
-                                input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
-                                span#basic-addon1.input-group-addon + $
-                                input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                    .col-xs-5
+                        label Price per transaction
+                        .input-group
+                            span#basic-addon1.input-group-addon %
+                            input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.percentage', aria-describedby='basic-addon1')
+                            span#basic-addon1.input-group-addon + $
+                            input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.commission', aria-describedby='basic-addon1')
+                    .col-xs-5
+                    .col-xs-2
+                        button.form-control.btn.btn-primary(type='button' ng-click='vm.init()') Reset
             .panel.panel-primary
                 .panel-body
                     .form-group.col-xs-7
                         label To receive
                         .input-group
-                            span#basic-addon1.input-group-addon Receive
-                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                            span#basic-addon1.input-group-addon To receive
+                            input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.SToReceive',  aria-describedby='basic-addon1')
                     .form-group.col-xs-7
                         .input-group
-                            span#basic-addon1.input-group-addon Send
-                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                            span#basic-addon1.input-group-addon send
+                            input.form-control(type='text', ng-model='vm.calc.SToSend', aria-describedby='basic-addon1', readonly)
                     .form-group.col-xs-7
                         .input-group
                             span#basic-addon1.input-group-addon Comision
-                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                            input.form-control(type='text', ng-model='vm.calc.SToComision', aria-describedby='basic-addon1', readonly)
                 .panel-footer
                 .panel-body
                     .form-group.col-xs-7
-                        label To send
+                        label If they are sent
                         .input-group
-                            span#basic-addon1.input-group-addon Send
-                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                            span#basic-addon1.input-group-addon To send
+                            input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.RToReceive', aria-describedby='basic-addon1')
                     .form-group.col-xs-7
                         .input-group
                             span#basic-addon1.input-group-addon Receive
-                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                            input.form-control(type='text', ng-model='vm.calc.RToSend', aria-describedby='basic-addon1', readonly)
                     .form-group.col-xs-7
                         .input-group
                             span#basic-addon1.input-group-addon Comision
-                            input.form-control(type='text', placeholder='', aria-describedby='basic-addon1')
+                            input.form-control(type='text', ng-model='vm.calc.RToComision', aria-describedby='basic-addon1', readonly)
         .col-xs-3
