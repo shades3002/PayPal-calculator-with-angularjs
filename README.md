@@ -1,4 +1,4 @@
-# PayPal-calculator-with-angularjs | [Demo](https://shades3002.github.io/PayPal-calculator-with-angularjs "Demo"){:target="_blank"}
+# PayPal-calculator-with-angularjs | [Demo](https://shades3002.github.io/PayPal-calculator-with-angularjs target="_blank" "Demo"){:target="_blank"}
 PayPal calculator with AngularJs, to calculate the fees charged by the platform when sending and receiving.
 
 # Synopsis
