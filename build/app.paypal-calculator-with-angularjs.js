@@ -34,21 +34,16 @@
         }])
         .run();
 })();
-(function() {
+(function(){
     'use strict';
     angular
-        .module('app.core')
-        .config(function($routeProvider) {
-            $routeProvider
-                .when("/errors/403", {
-                    templateUrl: '/'
-                })
-                .otherwise({
-                    redirectTo: '/'
-                });
-        });
-})();
+        .module('app.calculator', [
+            'app.calculator.controllers'
+        ]);
 
+    angular
+        .module('app.calculator.controllers', []);
+})();
 (function() {
     'use strict';
     angular
@@ -111,16 +106,6 @@
         }
     }
 })();
-(function(){
-    'use strict';
-    angular
-        .module('app.calculator', [
-            'app.calculator.controllers'
-        ]);
-
-    angular
-        .module('app.calculator.controllers', []);
-})();
 (function () {
     'use strict';
     angular
@@ -131,6 +116,20 @@
                     templateUrl: 'app/modules/calculator/partials/calculator.html',
                     controller: 'calculatorCtrl',
                     controllerAs: 'vm'
+                });
+        });
+})();
+(function() {
+    'use strict';
+    angular
+        .module('app.core')
+        .config(function($routeProvider) {
+            $routeProvider
+                .when("/errors/403", {
+                    templateUrl: '/'
+                })
+                .otherwise({
+                    redirectTo: '/'
                 });
         });
 })();

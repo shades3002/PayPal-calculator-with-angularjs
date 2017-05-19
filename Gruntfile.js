@@ -45,7 +45,9 @@ module.exports = function(grunt) {
                     //app
                     'app/app.js',
                     //root module
-                    'app/**/core/*.js',
+                    'app/modules/core/core.module.js',
+                    'app/modules/calculator/calculator.module.js',
+                    //js
                     'app/**/**/*.js',
                     '!app/modules/core/i18n/*.js',
                 ],
@@ -93,8 +95,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify'); 
 
-    //Producction
-    grunt.registerTask('prodution', [
+    //production
+    grunt.registerTask('production', [
         'concat',
         'uglify'
     ]);
