@@ -6,14 +6,14 @@
                 .panel-body
                     .page-header
                         h3(translate="PAYPAL_COMMISSIONS_CALCULATOR")
-                    .col-xs-12.col-sm-8.col-md-9
+                    .col-xs-12.col-sm-8.col-md-8
                         label(translate="THE_COMMISSIONS")
                         .input-group
                             span#basic-addon1.input-group-addon %
                             input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.percentage', aria-describedby='basic-addon1')
                             span#basic-addon1.input-group-addon + $
                             input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.commission', aria-describedby='basic-addon1')
-                    .col-xs-12.col-sm-4.col-md-3
+                    .col-xs-12.col-sm-4.col-md-4
                         button.form-control.btn.btn-primary(type='button' ng-click='vm.init()' translate="RESET")
             .panel.panel-primary
                 .panel-body
