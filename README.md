@@ -25,7 +25,7 @@ Note: you must have NodeJs installed in your environment, in order to run the ap
 
 ```bash
 $ sudo apt-get install git
-$ git clone git@github.com:shades3002/PayPal-calculator-with-js.git
+$ git clone git@github.com:shades3002/PayPal-calculator-with-angularjs.git
 $ cd PayPal-calculator-with-angularjs
 $ git checkout master
 $ sudo npm install -g grunt-cli
