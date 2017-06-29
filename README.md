@@ -7,9 +7,9 @@ When making Paypal balance exchanges it becomes necessary to calculate the commi
 
 # Features
 * Sass
-* Pup
+* Pug
 * GruntJs
-* AngulaJs
+* AngularJs
 * NodeJs
 * Bootstrap
 
