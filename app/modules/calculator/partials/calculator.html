@@ -1,65 +1,78 @@
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3 col-md-4"></div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <div class="page-header">
-            <h3 translate="PAYPAL_COMMISSIONS_CALCULATOR"></h3>
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+        <li class="active" role="presentation"><a href="#" translate="CONTACT"></a></li>
+      </ul><img src="assets/PP_logo_h_100x26.png"/>
+      <h4 class="text-muted" translate="PAYPAL_COMMISSIONS_CALCULATOR"></h4>
+    </nav>
+  </div>
+  <div class="col-sm-1 col-md-2"></div>
+  <div class="col-xs-12 col-sm-6 col-md-8">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <div class="col-xs-12 col-sm-8 col-md-8">
+          <label translate="THE_COMMISSIONS"></label>
+          <div class="input-group"><span class="input-group-addon" id="basic-addon1"><i class="fa fa-percent" aria-hidden="true"> </i></span>
+            <input class="form-control" type="number" step="0.1" min="0.1" ng-model="vm.calc.percentage" aria-describedby="basic-addon1"/><span class="input-group-addon" id="basic-addon1"> <i class="fa fa-plus" aria-hidden="true"> <i class="fa fa-usd" aria-hidden="true"></i></i></span>
+            <input class="form-control" type="number" step="0.1" min="0.1" ng-model="vm.calc.commission" aria-describedby="basic-addon1"/>
           </div>
-          <div class="col-xs-12 col-sm-8 col-md-8">
-            <label translate="THE_COMMISSIONS"></label>
-            <div class="input-group"><span class="input-group-addon" id="basic-addon1">%</span>
-              <input class="form-control" type="number" step="0.1" min="0.1" ng-model="vm.calc.percentage" aria-describedby="basic-addon1"/><span class="input-group-addon" id="basic-addon1">+ $</span>
-              <input class="form-control" type="number" step="0.1" min="0.1" ng-model="vm.calc.commission" aria-describedby="basic-addon1"/>
-            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <button class="form-control btn btn-primary bottomReset" type="button" ng-click="vm.init()" translate="RESET"></button>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <div class="form-group col-xs-12 col-sm-10 col-md-10">
+          <label translate="RECEIVE"></label>
+          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="TO_RECEIVE"></span>
+            <input class="form-control" type="number" step="0.1" min="0.1" ng-model="vm.calc.SToReceive" aria-describedby="basic-addon1"/>
           </div>
-          <div class="col-xs-12 col-sm-4 col-md-4">
-            <button class="form-control btn btn-primary" type="button" ng-click="vm.init()" translate="RESET"></button>
+        </div>
+        <div class="form-group col-xs-12 col-sm-10 col-md-10">
+          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="MUST_SEND"></span>
+            <input class="form-control" type="text" ng-model="vm.calc.SToSend" aria-describedby="basic-addon1" readonly="readonly"/>
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-10 col-md-10">
+          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="COMMISSION"></span>
+            <input class="form-control" type="text" ng-model="vm.calc.SToComision" aria-describedby="basic-addon1" readonly="readonly"/>
           </div>
         </div>
       </div>
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <div class="form-group col-xs-12 col-sm-10 col-md-10">
-            <label translate="RECEIVE"></label>
-            <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="TO_RECEIVE"></span>
-              <input class="form-control" type="number" step="0.1" min="0.1" ng-model="vm.calc.SToReceive" aria-describedby="basic-addon1"/>
-            </div>
-          </div>
-          <div class="form-group col-xs-12 col-sm-10 col-md-10">
-            <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="MUST_SEND"></span>
-              <input class="form-control" type="text" ng-model="vm.calc.SToSend" aria-describedby="basic-addon1" readonly="readonly"/>
-            </div>
-          </div>
-          <div class="form-group col-xs-12 col-sm-10 col-md-10">
-            <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="COMMISSION"></span>
-              <input class="form-control" type="text" ng-model="vm.calc.SToComision" aria-describedby="basic-addon1" readonly="readonly"/>
-            </div>
+      <div class="panel-footer"></div>
+      <div class="panel-body">
+        <div class="form-group col-xs-12 col-sm-10 col-md-10">
+          <label translate="IF_THEY_ARE_SENT"></label>
+          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="IF_YOU_SEND"></span>
+            <input class="form-control" type="number" step="0.1" min="0.1" ng-model="vm.calc.RToReceive" aria-describedby="basic-addon1"/>
           </div>
         </div>
-        <div class="panel-footer"></div>
-        <div class="panel-body">
-          <div class="form-group col-xs-12 col-sm-10 col-md-10">
-            <label translate="IF_THEY_ARE_SENT"></label>
-            <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="IF_YOU_SEND"></span>
-              <input class="form-control" type="number" step="0.1" min="0.1" ng-model="vm.calc.RToReceive" aria-describedby="basic-addon1"/>
-            </div>
+        <div class="form-group col-xs-12 col-sm-10 col-md-10">
+          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="YOU_RECEIVE"></span>
+            <input class="form-control" type="text" ng-model="vm.calc.RToSend" aria-describedby="basic-addon1" readonly="readonly"/>
           </div>
-          <div class="form-group col-xs-12 col-sm-10 col-md-10">
-            <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="YOU_RECEIVE"></span>
-              <input class="form-control" type="text" ng-model="vm.calc.RToSend" aria-describedby="basic-addon1" readonly="readonly"/>
-            </div>
-          </div>
-          <div class="form-group col-xs-12 col-sm-10 col-md-10">
-            <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="COMMISSION"></span>
-              <input class="form-control" type="text" ng-model="vm.calc.RToComision" aria-describedby="basic-addon1" readonly="readonly"/>
-            </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-10 col-md-10">
+          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="COMMISSION"></span>
+            <input class="form-control" type="text" ng-model="vm.calc.RToComision" aria-describedby="basic-addon1" readonly="readonly"/>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-3 col-md-4"></div>
   </div>
+  <div class="col-sm-1 col-md-2"></div>
+  <div class="row marketing"></div>
+  <footer class="footer">
+    <div class="col-sm-4 col-md-4">
+      <p><i class="fa fa-html5 fa-lg" aria-hidden="true"></i></p>
+    </div>
+    <div class="col-sm-8 col-md-8">
+      <p class="text-right">            <a class="twitter-follow-button" href="https://twitter.com/carlos_conexo" data-show-count="false">Follow @carlos_conexo </a> <a class="github-button" href="https://github.com/shades3002" aria-label="Follow @shades3002 on GitHub">Follow @shades3002</a><a class="github-button" href="https://github.com/shades3002/PayPal-calculator-with-angularjs" aria-label="Star shades3002/PayPal-calculator-with-angularjs on GitHub">Star</a></p>
+    </div>
+  </footer>
 </div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

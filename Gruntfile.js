@@ -22,6 +22,13 @@ module.exports = function(grunt) {
                     'index-dev.html': 'src/views/index-dev.pug'
                 }]
             }
+        },        
+        sass: {
+            dist: {
+                files: {
+                    'src/style/css/style.css': 'src/style/style.sass'
+                }
+            }
         },
         watch: {
             options: {
@@ -33,7 +40,11 @@ module.exports = function(grunt) {
             },
             pug: {
                 files: ['src/views/**/*.pug'],
-                tasks: ['newer:pug']
+                tasks: ['pug']
+            },
+            sass: {
+                files: ['src/style/**/*.sass'],
+                tasks: ['sass']
             },
             html: {
                 files: ['index.html', 'app/**/*.html', 'app/**/**/*.html'],
@@ -57,7 +68,8 @@ module.exports = function(grunt) {
                     'node_modules/bootstrap/dist/css/bootstrap.css',
                     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css',
                     'node_modules/toastr/build/toastr.min.css',
-                    'node_modules/angular-loading-bar/build/loading-bar.min.css'
+                    'node_modules/angular-loading-bar/build/loading-bar.min.css',
+                    'src/styles/css/style.css'
                 ],
                 dest: 'build/style/style.css',
             },
@@ -110,6 +122,7 @@ module.exports = function(grunt) {
     // Grunts plugins
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-pug');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-newer');
@@ -126,6 +139,7 @@ module.exports = function(grunt) {
     grunt.registerTask('server', [
         'jshint',
         'pug',
+        'sass',
         'connect',
         'watch'
     ]);

@@ -17,5 +17,3 @@ node_modules
 
 # Sass cache
 .sass-cache
-assets/css/style.css.map
-assets/css/style.css

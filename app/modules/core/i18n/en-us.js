@@ -1,6 +1,6 @@
 {
     "WELCOME": "Welcome",
-    "PAYPAL_COMMISSIONS_CALCULATOR": "PayPal Commissions Calculator",
+    "PAYPAL_COMMISSIONS_CALCULATOR": "Commissions Calculator",
     "THE_COMMISSIONS": "The Commissions",
     "RECEIVE": "Receive",
     "TO_RECEIVE": "To receive",
@@ -9,5 +9,6 @@
     "IF_THEY_ARE_SENT": "If they are sent",
     "IF_YOU_SEND": "If you send",
     "YOU_RECEIVE": "You receive",
-    "RESET": "Reset"
+    "RESET": "Reset",
+    "CONTACT": "Contact"
 }

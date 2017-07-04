@@ -19,9 +19,16 @@ For this project I wanted to use [Pug](https://pugjs.org/ "Pug") which is a temp
 
 # Installation
 
-Note: you must have NodeJs installed in your environment, in order to run the application
+Note: you must have NodeJs and Ruby installed in your environment, in order to run the application
 
-1. Download the source code from git repository, executing the following command:
+1. Install gem sass
+
+```bash
+$ ruby -v
+$ sudo gem install sass
+$ sass -v
+```
+2. Download the source code from git repository, executing the following command:
 
 ```bash
 $ sudo apt-get install git
