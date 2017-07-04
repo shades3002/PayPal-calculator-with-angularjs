@@ -108,7 +108,7 @@ module.exports = function(grunt) {
                     base: {
                         path: '.',
                         options: {
-                            index: 'index.html',
+                            index: 'index-dev.html',
                         }
                     },
                     hostname: 'localhost',
