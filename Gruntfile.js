@@ -69,6 +69,7 @@ module.exports = function(grunt) {
                     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css',
                     'node_modules/toastr/build/toastr.min.css',
                     'node_modules/angular-loading-bar/build/loading-bar.min.css',
+                    'node_modules/font-awesome/css/font-awesome.min.css',
                     'src/styles/css/style.css'
                 ],
                 dest: 'build/style/style.css',

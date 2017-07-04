@@ -50,20 +50,33 @@
         .module('app.calculator.controllers')
         .controller('calculatorCtrl', calculatorCtrl);
 
-    calculatorCtrl.$inject = ['$scope'];
+    calculatorCtrl.$inject = ['$scope','$filter'];
 
-    function calculatorCtrl($scope) {
+    function calculatorCtrl($scope, $filter) {
         /* jshint validthis: true */
         var vm = this;
-        vm.getCalculator = getCalculator;
         vm.init = init;
+        vm.getCalculator = getCalculator;
         vm.calc = {};
+
         vm.init();
+
+        function init() {
+            vm.calc = {
+                percentage: 5.4, 
+                commission: 0.30,
+                SToReceive: '',
+                SToSend: '',
+                SToComision: '',
+                RToReceive: '',
+                RToSend: '',
+                RToComision: ''
+            };
+        }
 
         $scope.$watch(function () { 
                 return vm.calc; 
-            }, 
-            function(New, Old) {
+            }, function(New, Old) {
                 if (New === Old) {
                     return;
                 } else {
@@ -78,33 +91,21 @@
             }
 
             if ( vm.calc.SToReceive !== undefined && vm.calc.SToReceive !== '' && vm.calc.SToReceive !== null) {
-                vm.calc.SToSend = Math.round(((vm.calc.SToReceive + vm.calc.commission) / vm.percentage) * 100) / 100;
-                vm.calc.SToComision = Math.round((vm.calc.SToSend - vm.calc.SToReceive) * 100) / 100;  
+                vm.calc.SToSend = $filter('mathRound')((vm.calc.SToReceive + vm.calc.commission) / vm.percentage); 
+                vm.calc.SToComision = $filter('mathRound')(vm.calc.SToSend - vm.calc.SToReceive);  
             } else {
                 vm.calc.SToSend = vm.calc.SToComision = ''; 
             }
 
             if ( vm.calc.RToReceive !== undefined && vm.calc.RToReceive !== '' && vm.calc.RToReceive !== null) {
-                vm.calc.RToSend = Math.round((vm.calc.RToReceive * vm.percentage - vm.calc.commission) * 100) / 100; 
-                vm.calc.RToComision = Math.round((vm.calc.RToReceive - vm.calc.RToSend) * 100) / 100;               
+                vm.calc.RToSend = $filter('mathRound')((vm.calc.RToReceive * vm.percentage) - vm.calc.commission); 
+                vm.calc.RToComision = $filter('mathRound')(vm.calc.RToReceive - vm.calc.RToSend);               
             } else {
                 vm.calc.RToSend = vm.calc.RToComision = ''; 
             }
         }
-
-        function init() {
-            vm.calc = {
-                percentage: 5.4, 
-                commission: 0.30,
-                SToReceive: '',
-                SToSend: '',
-                SToComision: '',
-                RToReceive: '',
-                RToSend: '',
-                RToComision: ''
-            };
-        }
     }
+
 })();
 (function () {
     'use strict';
@@ -118,6 +119,22 @@
                     controllerAs: 'vm'
                 });
         });
+})();
+(function () {
+    'use strict';
+    angular
+        .module('app.core')
+        .filter('mathRound', mathRound);
+
+    function mathRound() {
+        return function (input) {
+            if (!isNaN(input) && input > 0) {
+                return Math.round(input * 100) / 100;
+            } else  {
+                return input;
+            }
+        };
+    }
 })();
 (function() {
     'use strict';
