@@ -7,7 +7,9 @@
             'ngRoute',
             'ui.bootstrap',
             'pascalprecht.translate',
-            'ngSanitize'
+            'ngSanitize',
+            'ngAnimate',
+            'angular-loading-bar'
         ])
         .config(['$translateProvider',function($translateProvider) {
             $translateProvider

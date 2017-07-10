@@ -4,9 +4,9 @@
         .module('app.calculator.controllers')
         .controller('calculatorCtrl', calculatorCtrl);
 
-    calculatorCtrl.$inject = ['$scope','$filter'];
+    calculatorCtrl.$inject = ['$scope','$filter', 'cfpLoadingBar'];
 
-    function calculatorCtrl($scope, $filter) {
+    function calculatorCtrl($scope, $filter, cfpLoadingBar) {
         /* jshint validthis: true */
         var vm = this;
         vm.init = init;
@@ -16,6 +16,7 @@
         vm.init();
 
         function init() {
+            cfpLoadingBar.start();
             vm.calc = {
                 percentage: 5.4, 
                 commission: 0.30,
@@ -58,6 +59,10 @@
                 vm.calc.RToSend = vm.calc.RToComision = ''; 
             }
         }
+
+        setTimeout(function() {
+            cfpLoadingBar.complete();
+        }, 750);
     }
 
 })();

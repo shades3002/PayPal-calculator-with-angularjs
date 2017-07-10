@@ -70,6 +70,7 @@ module.exports = function(grunt) {
                     'node_modules/toastr/build/toastr.min.css',
                     'node_modules/angular-loading-bar/build/loading-bar.min.css',
                     'node_modules/font-awesome/css/font-awesome.min.css',
+                    'node_modules/angular-loading-bar/build/loading-bar.min.css',
                     'src/style/css/style.css'
                 ],
                 dest: 'build/style/style.css',
@@ -83,7 +84,9 @@ module.exports = function(grunt) {
                     'node_modules/angular-route/angular-route.min.js',
                     'node_modules/angular-translate/dist/angular-translate.min.js',
                     'node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
-                    'node_modules/angular-sanitize/angular-sanitize.min.js'
+                    'node_modules/angular-sanitize/angular-sanitize.min.js',
+                    'node_modules/angular-animate/angular-animate.min.js',
+                    'node_modules/angular-loading-bar/build/loading-bar.min.js',
                 ],
                 dest: 'build/node_modules.js'
             }
