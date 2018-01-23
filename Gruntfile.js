@@ -100,10 +100,25 @@ module.exports = function(grunt) {
                 '<%= grunt.template.today("yyyy-mm-dd") %> */'
             },
             build: {
-                src: 'build/app.paypal-calculator-with-angularjs.js',
+                src: ['build/node_modules.js', 'build/app.paypal-calculator-with-angularjs.js'],
                 dest: 'build/app.paypal-calculator-with-angularjs.min.js'
             }
         }, 
+        cssmin: {
+          target: {
+            files: [{
+              expand: true,
+              cwd: 'build/style',
+              src: ['*.css', '!*.min.css'],
+              dest: 'build/style',
+              ext: '.min.css'
+            }]
+          }
+        },
+        clean: {
+          js: ['build/*.js', '!build/*.min.js'],
+          css: ['build/style/*.css', '!build/style/*.min.css']
+        },
         connect: {
             server: {
                 options: {
@@ -132,13 +147,17 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify'); 
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     //production
     grunt.registerTask('production', [
         'pug',
         'sass',
         'concat',
-        'uglify'
+        'cssmin',
+        'uglify'/*,
+        'clean'*/
     ]);
 
     // Start the http server for development
