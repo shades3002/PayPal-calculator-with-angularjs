@@ -15,11 +15,11 @@
                     .input-group
                         span#basic-addon1.input-group-addon
                             i.fa.fa-percent(aria-hidden='true') 
-                        input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.percentage', aria-describedby='basic-addon1')
+                        input.form-control(type='number', step='0.01', min='0.01', ng-model='vm.calc.percentage', aria-describedby='basic-addon1')
                         span#basic-addon1.input-group-addon 
                             i.fa.fa-plus(aria-hidden='true') 
                                 i.fa.fa-usd(aria-hidden='true')
-                        input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.commission', aria-describedby='basic-addon1')
+                        input.form-control(type='number', step='0.01', min='0.01', ng-model='vm.calc.commission', aria-describedby='basic-addon1')
                 .col-xs-12.col-sm-4.col-md-4
                     button.form-control.btn.btn-primary.bottomReset(type='button' ng-click='vm.init()' translate="RESET")
         .panel.panel-primary
@@ -28,7 +28,7 @@
                     label(translate="RECEIVE")
                     .input-group
                         span#basic-addon1.input-group-addon(translate="TO_RECEIVE")
-                        input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.SToReceive',  aria-describedby='basic-addon1')
+                        input.form-control(type='number', step='0.0001', min='0.01', max='100000000.9999', ng-model='vm.calc.SToReceive',  aria-describedby='basic-addon1')
                 .form-group.col-xs-12.col-sm-10.col-md-10
                     .input-group
                         span#basic-addon1.input-group-addon(translate="MUST_SEND")
@@ -43,7 +43,7 @@
                     label(translate="IF_THEY_ARE_SENT")
                     .input-group
                         span#basic-addon1.input-group-addon(translate="IF_YOU_SEND")
-                        input.form-control(type='number', step='0.1', min='0.1', ng-model='vm.calc.RToReceive', aria-describedby='basic-addon1')
+                        input.form-control(type='number', step='0.0001', min='0.01', max='100000000.9999', ng-model='vm.calc.RToReceive', aria-describedby='basic-addon1')
                 .form-group.col-xs-12.col-sm-10.col-md-10
                     .input-group
                         span#basic-addon1.input-group-addon(translate="YOU_RECEIVE")

@@ -87,6 +87,7 @@ module.exports = function(grunt) {
                     'node_modules/angular-sanitize/angular-sanitize.min.js',
                     'node_modules/angular-animate/angular-animate.min.js',
                     'node_modules/angular-loading-bar/build/loading-bar.min.js',
+                    'node_modules/toastr/build/toastr.min.js'
                 ],
                 dest: 'build/node_modules.js'
             }

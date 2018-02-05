@@ -10,5 +10,6 @@
     "IF_YOU_SEND": "Si envías",
     "YOU_RECEIVE": "Recibes",
     "RESET": "Reiniciar",
-    "CONTACT": "Contacto"
+    "CONTACT": "Contacto",
+    "ERROR_NUMBER": "Solo se permite cuatro decimales y un monto no mayor a 100,000,000"
 }
