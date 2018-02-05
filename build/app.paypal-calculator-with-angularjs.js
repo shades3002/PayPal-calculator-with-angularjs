@@ -52,14 +52,18 @@
         .module('app.calculator.controllers')
         .controller('calculatorCtrl', calculatorCtrl);
 
-    calculatorCtrl.$inject = ['$scope','$filter', 'cfpLoadingBar'];
+    calculatorCtrl.$inject = ['$scope','$filter', 'cfpLoadingBar', '$translate'];
 
-    function calculatorCtrl($scope, $filter, cfpLoadingBar) {
+    function calculatorCtrl($scope, $filter, cfpLoadingBar, $translate) {
         /* jshint validthis: true */
         var vm = this;
         vm.init = init;
         vm.getCalculator = getCalculator;
         vm.calc = {};
+        vm.error = '';
+        $translate('ERROR_NUMBER').then(function (translation) {
+            vm.error = translation;
+        });
 
         vm.init();
 
@@ -98,6 +102,10 @@
                 vm.calc.SToComision = $filter('mathRound')(vm.calc.SToSend - vm.calc.SToReceive);  
             } else {
                 vm.calc.SToSend = vm.calc.SToComision = ''; 
+                if(vm.calc.SToReceive === undefined) {
+                    toastr.error(vm.error, 'error',
+                    {closeButton: true, preventDuplicates: true});
+                }
             }
 
             if ( vm.calc.RToReceive !== undefined && vm.calc.RToReceive !== '' && vm.calc.RToReceive !== null) {
@@ -105,6 +113,10 @@
                 vm.calc.RToComision = $filter('mathRound')(vm.calc.RToReceive - vm.calc.RToSend);               
             } else {
                 vm.calc.RToSend = vm.calc.RToComision = ''; 
+                if(vm.calc.RToReceive === undefined) {
+                    toastr.error(vm.error, 'error',
+                    {closeButton: true, preventDuplicates: true});
+                }
             }
         }
 
