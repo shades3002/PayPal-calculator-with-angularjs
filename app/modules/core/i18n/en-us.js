@@ -11,5 +11,6 @@
     "YOU_RECEIVE": "You receive",
     "RESET": "Reset",
     "CONTACT": "Contact",
-    "ERROR_NUMBER": "Only four decimals are allowed and an amount not greater than 100,000,000"
+    "ERROR_NUMBER": "Only four decimals are allowed and an amount not greater than 100,000,000",
+    "COMMENTS": "Comments"
 }

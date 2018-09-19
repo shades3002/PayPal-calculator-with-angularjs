@@ -1,78 +1,147 @@
 
-<div class="container">
-  <div class="header clearfix">
-    <nav>
-      <ul class="nav nav-pills pull-right">
-        <li class="active" role="presentation"><a href="#" translate="CONTACT"></a></li>
-      </ul><img src="assets/PP_logo_h_100x26.png"/>
-      <h4 class="text-muted" translate="PAYPAL_COMMISSIONS_CALCULATOR"></h4>
+<header>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#"><img src="assets/PP_logo_h_100x26.png" alt="PAYPAL COMMISSIONS CALCULATOR"/></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active"><a class="nav-link btn btn-outline-primary" href="#disqus_thread" translate="COMMENTS"></a><span class="sr-only">(current)</span></li>
+        </ul>
+      </div>
     </nav>
   </div>
-  <div class="col-sm-1 col-md-2"></div>
-  <div class="col-xs-12 col-sm-6 col-md-8">
-    <div class="panel panel-primary">
-      <div class="panel-body">
-        <div class="col-xs-12 col-sm-8 col-md-8">
-          <label translate="THE_COMMISSIONS"></label>
-          <div class="input-group"><span class="input-group-addon" id="basic-addon1"><i class="fa fa-percent" aria-hidden="true"> </i></span>
-            <input class="form-control" type="number" step="0.01" min="0.01" ng-model="vm.calc.percentage" aria-describedby="basic-addon1"/><span class="input-group-addon" id="basic-addon1"> <i class="fa fa-plus" aria-hidden="true"> <i class="fa fa-usd" aria-hidden="true"></i></i></span>
-            <input class="form-control" type="number" step="0.01" min="0.01" ng-model="vm.calc.commission" aria-describedby="basic-addon1"/>
+</header>
+<div class="container">
+  <section>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-6">
+        <div class="card">
+          <div class="card-header"><img class="d-none d-md-block" src="assets/PP_logo_h_100x26.png" alt="PAYPAL COMMISSIONS CALCULATOR"/>
+            <h4 class="pull-right text-muted" translate="PAYPAL_COMMISSIONS_CALCULATOR"></h4>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4">
-          <button class="form-control btn btn-primary bottomReset" type="button" ng-click="vm.init()" translate="RESET"></button>
+          <div class="card-body">
+            <div class="card-title"><strong translate="THE_COMMISSIONS"></strong></div>
+            <div class="form-row align-items-center">
+              <div class="col-sm-4 pb-2">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-percent" aria-hidden="true"> </i></div>
+                  </div>
+                  <input class="form-control" type="number" step="0.01" min="0.01" ng-model="vm.calc.percentage" aria-describedby="basic-addon1"/>
+                </div>
+              </div>
+              <div class="col-sm-4 pb-2">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"> <i class="fa fa-usd" aria-hidden="true"></i></div>
+                  </div>
+                  <input class="form-control" type="number" step="0.01" min="0.01" ng-model="vm.calc.commission" aria-describedby="basic-addon1"/>
+                </div>
+              </div>
+              <div class="col-sm-4 pb-2">
+                <button class="form-control btn btn-primary" type="button" ng-click="vm.init()" translate="RESET"></button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="panel panel-primary">
-      <div class="panel-body">
-        <div class="form-group col-xs-12 col-sm-10 col-md-10">
-          <label translate="RECEIVE"></label>
-          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="TO_RECEIVE"></span>
-            <input class="form-control" type="number" step="0.0001" min="0.01" max="100000000.9999" ng-model="vm.calc.SToReceive" aria-describedby="basic-addon1"/>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-6">
+        <div class="card">
+          <div class="card-body pb-0">
+            <div class="card-title"><strong translate="RECEIVE"></strong></div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" translate="TO_RECEIVE"></div>
+                </div>
+                <input class="form-control" type="number" step="0.0001" min="0.01" max="100000000.9999" ng-model="vm.calc.SToReceive" aria-describedby="basic-addon1"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" translate="MUST_SEND"></div>
+                </div>
+                <input class="form-control" type="text" ng-model="vm.calc.SToSend" aria-describedby="basic-addon1" readonly="readonly"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" translate="COMMISSION"></div>
+                </div>
+                <input class="form-control" type="text" ng-model="vm.calc.SToComision" aria-describedby="basic-addon1" readonly="readonly"/>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="form-group col-xs-12 col-sm-10 col-md-10">
-          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="MUST_SEND"></span>
-            <input class="form-control" type="text" ng-model="vm.calc.SToSend" aria-describedby="basic-addon1" readonly="readonly"/>
-          </div>
-        </div>
-        <div class="form-group col-xs-12 col-sm-10 col-md-10">
-          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="COMMISSION"></span>
-            <input class="form-control" type="text" ng-model="vm.calc.SToComision" aria-describedby="basic-addon1" readonly="readonly"/>
+          <hr/>
+          <div class="card-body pt-0 mt-0">
+            <div class="card-title"><strong translate="IF_THEY_ARE_SENT"></strong></div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" translate="IF_YOU_SEND"></div>
+                </div>
+                <input class="form-control" type="number" step="0.0001" min="0.01" max="100000000.9999" ng-model="vm.calc.RToReceive" aria-describedby="basic-addon1"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" translate="YOU_RECEIVE"></div>
+                </div>
+                <input class="form-control" type="text" ng-model="vm.calc.RToSend" aria-describedby="basic-addon1" readonly="readonly"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" translate="COMMISSION"></div>
+                </div>
+                <input class="form-control" type="text" ng-model="vm.calc.RToComision" aria-describedby="basic-addon1" readonly="readonly"/>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="panel-footer"></div>
-      <div class="panel-body">
-        <div class="form-group col-xs-12 col-sm-10 col-md-10">
-          <label translate="IF_THEY_ARE_SENT"></label>
-          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="IF_YOU_SEND"></span>
-            <input class="form-control" type="number" step="0.0001" min="0.01" max="100000000.9999" ng-model="vm.calc.RToReceive" aria-describedby="basic-addon1"/>
-          </div>
+    </div>
+  </section>
+</div>
+<footer>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-6">
+        <div class="row">
+          <div class="col-sm-1"><i class="fa fa-html5 fa-lg" aria-hidden="true"></i></div>
+          <div class="col-sm-11 text-right">            <a class="twitter-follow-button" href="https://twitter.com/carlos_conexo" data-show-count="false">Follow </a> <a class="github-button" href="https://github.com/shades3002" aria-label="Follow @shades3002 on GitHub">Follow </a><a class="github-button" href="https://github.com/shades3002/PayPal-calculator-with-angularjs" aria-label="Star shades3002/PayPal-calculator-with-angularjs on GitHub">Star</a></div>
         </div>
-        <div class="form-group col-xs-12 col-sm-10 col-md-10">
-          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="YOU_RECEIVE"></span>
-            <input class="form-control" type="text" ng-model="vm.calc.RToSend" aria-describedby="basic-addon1" readonly="readonly"/>
-          </div>
+        <div class="row">
+          <hr/>
         </div>
-        <div class="form-group col-xs-12 col-sm-10 col-md-10">
-          <div class="input-group"><span class="input-group-addon" id="basic-addon1" translate="COMMISSION"></span>
-            <input class="form-control" type="text" ng-model="vm.calc.RToComision" aria-describedby="basic-addon1" readonly="readonly"/>
-          </div>
-        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">               
+      <div class="col-sm-12 col-lg-10 pt-4 mb-4">
+        <h4 translate="COMMENTS"></h4>
+        <div class="comments" id="disqus_thread"></div>
       </div>
     </div>
   </div>
-  <div class="col-sm-1 col-md-2"></div>
-  <div class="row marketing"></div>
-  <footer class="footer">
-    <div class="col-sm-4 col-md-4">
-      <p><i class="fa fa-html5 fa-lg" aria-hidden="true"></i></p>
-    </div>
-    <div class="col-sm-8 col-md-8">
-      <p class="text-right">            <a class="twitter-follow-button" href="https://twitter.com/carlos_conexo" data-show-count="false">Follow </a> <a class="github-button" href="https://github.com/shades3002" aria-label="Follow @shades3002 on GitHub">Follow </a><a class="github-button" href="https://github.com/shades3002/PayPal-calculator-with-angularjs" aria-label="Star shades3002/PayPal-calculator-with-angularjs on GitHub">Star</a></p>
-    </div>
-  </footer>
-</div>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</footer>
+<script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  
+</script>
+<script>
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://paypal-calculator-with-angularjs.disqus.com/embed.js';
+  s.type = 'text/javascript'; 
+  s.async = true;
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

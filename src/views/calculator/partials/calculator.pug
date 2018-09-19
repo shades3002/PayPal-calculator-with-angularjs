@@ -1,69 +1,116 @@
+header
+    .container-fluid
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            a.navbar-brand(href='#')
+                img(src='assets/PP_logo_h_100x26.png', alt='PAYPAL COMMISSIONS CALCULATOR')
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbar', aria-controls='navbar', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbar.collapse.navbar-collapse
+                ul.navbar-nav.ml-auto.mt-2.mt-lg-0
+                    li.nav-item.active
+                        a.nav-link.btn.btn-outline-primary(href='#disqus_thread',translate="COMMENTS")
+                        span.sr-only (current)
 .container
-    .header.clearfix
-        nav
-            ul.nav.nav-pills.pull-right
-                li.active(role='presentation')
-                    a(href='#' translate="CONTACT")
-            img(src='assets/PP_logo_h_100x26.png')
-            h4.text-muted(translate="PAYPAL_COMMISSIONS_CALCULATOR")
-    .col-sm-1.col-md-2
-    .col-xs-12.col-sm-6.col-md-8
-        .panel.panel-primary
-            .panel-body
-                .col-xs-12.col-sm-8.col-md-8
-                    label(translate="THE_COMMISSIONS")
-                    .input-group
-                        span#basic-addon1.input-group-addon
-                            i.fa.fa-percent(aria-hidden='true') 
-                        input.form-control(type='number', step='0.01', min='0.01', ng-model='vm.calc.percentage', aria-describedby='basic-addon1')
-                        span#basic-addon1.input-group-addon 
-                            i.fa.fa-plus(aria-hidden='true') 
-                                i.fa.fa-usd(aria-hidden='true')
-                        input.form-control(type='number', step='0.01', min='0.01', ng-model='vm.calc.commission', aria-describedby='basic-addon1')
-                .col-xs-12.col-sm-4.col-md-4
-                    button.form-control.btn.btn-primary.bottomReset(type='button' ng-click='vm.init()' translate="RESET")
-        .panel.panel-primary
-            .panel-body
-                .form-group.col-xs-12.col-sm-10.col-md-10
-                    label(translate="RECEIVE")
-                    .input-group
-                        span#basic-addon1.input-group-addon(translate="TO_RECEIVE")
-                        input.form-control(type='number', step='0.0001', min='0.01', max='100000000.9999', ng-model='vm.calc.SToReceive',  aria-describedby='basic-addon1')
-                .form-group.col-xs-12.col-sm-10.col-md-10
-                    .input-group
-                        span#basic-addon1.input-group-addon(translate="MUST_SEND")
-                        input.form-control(type='text', ng-model='vm.calc.SToSend', aria-describedby='basic-addon1', readonly)
-                .form-group.col-xs-12.col-sm-10.col-md-10
-                    .input-group
-                        span#basic-addon1.input-group-addon(translate="COMMISSION")
-                        input.form-control(type='text', ng-model='vm.calc.SToComision', aria-describedby='basic-addon1', readonly)
-            .panel-footer
-            .panel-body
-                .form-group.col-xs-12.col-sm-10.col-md-10
-                    label(translate="IF_THEY_ARE_SENT")
-                    .input-group
-                        span#basic-addon1.input-group-addon(translate="IF_YOU_SEND")
-                        input.form-control(type='number', step='0.0001', min='0.01', max='100000000.9999', ng-model='vm.calc.RToReceive', aria-describedby='basic-addon1')
-                .form-group.col-xs-12.col-sm-10.col-md-10
-                    .input-group
-                        span#basic-addon1.input-group-addon(translate="YOU_RECEIVE")
-                        input.form-control(type='text', ng-model='vm.calc.RToSend', aria-describedby='basic-addon1', readonly)
-                .form-group.col-xs-12.col-sm-10.col-md-10
-                    .input-group
-                        span#basic-addon1.input-group-addon(translate="COMMISSION")
-                        input.form-control(type='text', ng-model='vm.calc.RToComision', aria-describedby='basic-addon1', readonly)
-    .col-sm-1.col-md-2
-    .row.marketing
-    footer.footer
-        .col-sm-4.col-md-4
-            p
-                i.fa.fa-html5.fa-lg(aria-hidden='true')
-        .col-sm-8.col-md-8
-            p.text-right             
-                a.twitter-follow-button(href='https://twitter.com/carlos_conexo', data-show-count='false') Follow 
-                | 
-                a.github-button(href='https://github.com/shades3002', aria-label='Follow @shades3002 on GitHub') Follow 
-                |
-                a.github-button(href='https://github.com/shades3002/PayPal-calculator-with-angularjs', aria-label='Star shades3002/PayPal-calculator-with-angularjs on GitHub') Star
+    section
+        .row.justify-content-center
+            .col-sm-12.col-lg-6
+                .card
+                    .card-header
+                        img.d-none.d-md-block(src='assets/PP_logo_h_100x26.png', alt='PAYPAL COMMISSIONS CALCULATOR')
+                        h4.pull-right.text-muted(translate="PAYPAL_COMMISSIONS_CALCULATOR")
+                    .card-body
+                        .card-title
+                            strong(translate="THE_COMMISSIONS")
+                        .form-row.align-items-center
+                            .col-sm-4.pb-2
+                                .input-group
+                                    .input-group-prepend
+                                        .input-group-text
+                                            i.fa.fa-percent(aria-hidden='true') 
+                                    input.form-control(type='number', step='0.01', min='0.01', ng-model='vm.calc.percentage', aria-describedby='basic-addon1')
+                            .col-sm-4.pb-2
+                                .input-group
+                                    .input-group-prepend
+                                        .input-group-text 
+                                            i.fa.fa-usd(aria-hidden='true')
+                                    input.form-control(type='number', step='0.01', min='0.01', ng-model='vm.calc.commission', aria-describedby='basic-addon1')
+                            .col-sm-4.pb-2
+                                button.form-control.btn.btn-primary(type='button' ng-click='vm.init()' translate="RESET")
+        .row.justify-content-center
+            .col-sm-12.col-lg-6
+                .card
+                    .card-body.pb-0
+                        .card-title
+                            strong(translate="RECEIVE")
+                        .form-group
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text(translate="TO_RECEIVE")
+                                input.form-control(type='number', step='0.0001', min='0.01', max='100000000.9999', ng-model='vm.calc.SToReceive',  aria-describedby='basic-addon1')
+                        .form-group
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text(translate="MUST_SEND")
+                                input.form-control(type='text', ng-model='vm.calc.SToSend', aria-describedby='basic-addon1', readonly)
+                        .form-group
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text(translate="COMMISSION")
+                                input.form-control(type='text', ng-model='vm.calc.SToComision', aria-describedby='basic-addon1', readonly)
+
+                    hr
+                    .card-body.pt-0.mt-0
+                        .card-title
+                            strong(translate="IF_THEY_ARE_SENT")
+                        .form-group
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text(translate="IF_YOU_SEND")
+                                input.form-control(type='number', step='0.0001', min='0.01', max='100000000.9999', ng-model='vm.calc.RToReceive', aria-describedby='basic-addon1')
+                        .form-group
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text(translate="YOU_RECEIVE")
+                                input.form-control(type='text', ng-model='vm.calc.RToSend', aria-describedby='basic-addon1', readonly)
+                        .form-group
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text(translate="COMMISSION")
+                                input.form-control(type='text', ng-model='vm.calc.RToComision', aria-describedby='basic-addon1', readonly)
+
+footer
+    .container
+        .row.justify-content-center
+            .col-sm-12.col-lg-6
+                .row
+                    .col-sm-1
+                        i.fa.fa-html5.fa-lg(aria-hidden='true')
+                    .col-sm-11.text-right             
+                        a.twitter-follow-button(href='https://twitter.com/carlos_conexo', data-show-count='false') Follow 
+                        | 
+                        a.github-button(href='https://github.com/shades3002', aria-label='Follow @shades3002 on GitHub') Follow 
+                        |
+                        a.github-button(href='https://github.com/shades3002/PayPal-calculator-with-angularjs', aria-label='Star shades3002/PayPal-calculator-with-angularjs on GitHub') Star
+                .row
+                    hr
+        .row.justify-content-center                
+            .col-sm-12.col-lg-10.pt-4.mb-4
+                h4(translate="COMMENTS")
+                #disqus_thread.comments
+
 script.
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+script.
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://paypal-calculator-with-angularjs.disqus.com/embed.js';
+  s.type = 'text/javascript'; 
+  s.async = true;
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+noscript
+  | Please enable JavaScript to view the 
+  a(href='https://disqus.com/?ref_noscript') comments powered by Disqus.
+

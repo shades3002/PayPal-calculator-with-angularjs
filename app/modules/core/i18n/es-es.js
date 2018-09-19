@@ -11,5 +11,6 @@
     "YOU_RECEIVE": "Recibes",
     "RESET": "Reiniciar",
     "CONTACT": "Contacto",
-    "ERROR_NUMBER": "Solo se permite cuatro decimales y un monto no mayor a 100,000,000"
+    "ERROR_NUMBER": "Solo se permite cuatro decimales y un monto no mayor a 100,000,000",
+    "COMMENTS": "Comentarios"
 }
