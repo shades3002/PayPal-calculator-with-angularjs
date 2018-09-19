@@ -1,6 +1,6 @@
 header
     .container-fluid
-        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light.shadow-sm.p-3.mb-5.bg-white.rounded
             a.navbar-brand(href='#')
                 img(src='assets/PP_logo_h_100x26.png', alt='PAYPAL COMMISSIONS CALCULATOR')
             button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbar', aria-controls='navbar', aria-expanded='false', aria-label='Toggle navigation')
@@ -8,7 +8,7 @@ header
             #navbar.collapse.navbar-collapse
                 ul.navbar-nav.ml-auto.mt-2.mt-lg-0
                     li.nav-item.active
-                        a.nav-link.btn.btn-outline-primary(href='#disqus_thread',translate="COMMENTS")
+                        a.nav-link.btn.btn-outline-primary(href='#disqus_thread', target="_self", translate="COMMENTS")
                         span.sr-only (current)
 .container
     section
@@ -16,9 +16,12 @@ header
             .col-sm-12.col-lg-6
                 .card
                     .card-header
-                        img.d-none.d-md-block(src='assets/PP_logo_h_100x26.png', alt='PAYPAL COMMISSIONS CALCULATOR')
-                        h4.pull-right.text-muted(translate="PAYPAL_COMMISSIONS_CALCULATOR")
-                    .card-body
+                        .row
+                            .col-sm-12.col-lg-4
+                                img.d-none.d-md-block(src='assets/PP_logo_h_100x26.png', alt='PAYPAL COMMISSIONS CALCULATOR')
+                            .col-sm-12
+                                h4.pull-right.text-muted(translate="PAYPAL_COMMISSIONS_CALCULATOR")
+                    .card-body.bg-info
                         .card-title
                             strong(translate="THE_COMMISSIONS")
                         .form-row.align-items-center
@@ -39,7 +42,7 @@ header
         .row.justify-content-center
             .col-sm-12.col-lg-6
                 .card
-                    .card-body.pb-0
+                    .card-body.bg-info
                         .card-title
                             strong(translate="RECEIVE")
                         .form-group
@@ -57,10 +60,9 @@ header
                                 .input-group-prepend
                                     .input-group-text(translate="COMMISSION")
                                 input.form-control(type='text', ng-model='vm.calc.SToComision', aria-describedby='basic-addon1', readonly)
-
-                    hr
-                    .card-body.pt-0.mt-0
-                        .card-title
+                .card
+                    .card-body.bg-info
+                        .card-title.pt-3
                             strong(translate="IF_THEY_ARE_SENT")
                         .form-group
                             .input-group
@@ -83,9 +85,9 @@ footer
         .row.justify-content-center
             .col-sm-12.col-lg-6
                 .row
-                    .col-sm-1
-                        i.fa.fa-html5.fa-lg(aria-hidden='true')
-                    .col-sm-11.text-right             
+                    .col-sm-2
+                        i.fa.fa-html5.fa-lg.text-info(aria-hidden='true')
+                    .col-sm-10.text-right            
                         a.twitter-follow-button(href='https://twitter.com/carlos_conexo', data-show-count='false') Follow 
                         | 
                         a.github-button(href='https://github.com/shades3002', aria-label='Follow @shades3002 on GitHub') Follow 

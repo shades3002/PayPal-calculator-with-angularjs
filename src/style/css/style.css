@@ -1,9 +1,15 @@
 body {
-  background-color: #F7F9FA; }
+  background: #FFEFBA;
+  background: -webkit-linear-gradient(to bottom, #FFFFFF, #FFEFBA);
+  background: linear-gradient(to bottom, #FFFFFF, #FFEFBA); }
 
-/* Custom page footer */
 .comments {
   height: 400px;
   overflow-y: auto; }
+
+.bg-info {
+  background: #AED6F1;
+  background: -webkit-linear-gradient(to top, #fff, #AED6F1);
+  background: linear-gradient(to top, #fff, #AED6F1); }
 
 /*# sourceMappingURL=style.css.map */
