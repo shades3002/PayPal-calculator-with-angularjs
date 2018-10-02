@@ -65,11 +65,8 @@ module.exports = function(grunt) {
             },
             css: {
                 src: [
-                    'node_modules/bootstrap/dist/css/bootstrap.css',
                     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css',
                     'node_modules/toastr/build/toastr.min.css',
-                    'node_modules/angular-loading-bar/build/loading-bar.min.css',
-                    'node_modules/font-awesome/css/font-awesome.min.css',
                     'node_modules/angular-loading-bar/build/loading-bar.min.css',
                     'src/style/css/style.css'
                 ],
@@ -77,8 +74,6 @@ module.exports = function(grunt) {
             },
             node: {
                 src: [
-                    'node_modules/jquery/dist/jquery.min.js',
-                    'node_modules/bootstrap/dist/js/bootstrap.min.js',
                     'node_modules/angular/angular.js',
                     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
                     'node_modules/angular-route/angular-route.min.js',
