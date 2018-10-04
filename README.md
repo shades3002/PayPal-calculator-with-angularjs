@@ -50,7 +50,7 @@ $ cd PayPal-calculator-with-angularjs
 $ git checkout master
 $ sudo npm install -g grunt-cli
 $ npm install
-$ grunt prodution
+$ grunt production
 $ sudo cp -R ../PayPal-calculator-with-angularjs /var/www/html
 ```
 # Contributors
