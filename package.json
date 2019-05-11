@@ -1,5 +1,5 @@
 {
-  "name": "PayPal-calculator-with-angularjs",
+  "name": "paypal-calculator-with-angularjs",
   "version": "1.0.0",
   "private": false,
   "description": "PayPal calculator with angularjs, to calculate the fees charged by the platform when sending and receiving.",
